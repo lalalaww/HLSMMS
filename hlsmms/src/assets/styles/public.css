@@ -1,0 +1,170 @@
+
+
+
+/* ------------------------------------左侧---------------------------------------------------- */
+   /* 左侧栏 */
+  .el-aside {
+    background: url('../images/1_01.png') repeat-y;
+  }
+  
+  /* 去掉箭头 */
+  .el-submenu__title>i{
+      display:none;
+  }
+
+  /* 菜单栏 */
+  .el-submenu__title{
+    height: 33px;
+    line-height: 33px;
+    background: url('../images/1_03_03.png') repeat-x;
+    text-align: right;
+    margin-bottom: 15px;
+    /* margin-top: 15px; */
+    width:206px;
+    margin-left: 24px;
+    border-radius: 6px 0 0 6px;
+    color: #fff;
+  }
+  /* 子菜单 */
+  .el-submenu .el-menu-item{
+      line-height: 33px;
+      height: 33px;
+      text-align: right;
+      padding: 0 20px;
+      border-radius: 6px 0px 0px 6px;
+      margin-bottom: 10px;
+      width: 206px;
+      margin-left: 24px;
+      color: #aaa;
+
+  }
+
+/* 鼠标经过和焦点样式 */
+.el-menu-item:hover, .el-menu-item:focus{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+/* 激活样式 */
+.el-menu-item.is-active{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.el-menu-item.is-active a{
+    color: #fff;
+}
+
+/* 自定义样式 */
+#leftTitle{
+    color: #d1d0cf;
+    
+}
+
+#leftTitle h1,#leftTitle p{
+    text-align: right;
+    padding-right: 20px;
+}
+
+#leftTitle h1{
+    font-size: 22px;
+    font-family: "黑体";
+    margin-top: 30px;
+}
+#leftTitle a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    color: #bbbab9;
+}
+  .el-menu-item-group__title{
+      padding: 0;
+  }
+  .el-menu{
+    border: none;
+    background-color:transparent;
+  }
+
+  /* ----------------------------颜色------------------------ */
+  .cl888{
+    color: #888888;
+  }
+
+  /* ---------------------------magrin---------------------- */
+  .mt50b30{
+      margin-top: 50px;
+      margin-bottom: 30px;
+  }
+/* ----------------------------右侧------------------------------------ */
+  /* 头部 */
+  .el-header {
+    background-color: #f6f6f6;
+    color: #333;
+    line-height: 20px;
+    height: 120px !important;
+    padding-top: 12px;
+  }
+  .el-main .el-card__header {
+    /* 渐变颜色： 默认从上到下的渐变，两个颜色上面和下面，后期CSS3会学习 */
+    background: linear-gradient(#fff,#e5e5e5);
+    height: 40px;
+    line-height: 40px;
+    padding-top: 0;
+ }
+ .el-main .el-card__header h3{
+     margin: 0;
+ }
+
+ /* 警告框 */
+ .el-alert{
+     margin-top: 15px;
+     height: 40px;
+ }
+ .tables h4{
+     margin: 0;
+ }
+ .el-card{
+     margin-top:15px;
+ }
+ /* 中间内容间距 */
+ .el-main{
+     padding: 0 20px;
+     background-color: #f6f6f6;
+     height: 100%;
+ }
+
+   /* 页脚 */
+.el-footer {
+    color: #555555;
+    background-color: #f6f6f6;
+    font-size: 14px;
+  }
+  .el-footer p{
+    line-height: 48px;
+    border-top: 1px solid #ccc;
+    margin: 0px;
+}
+#mainContent{
+    display: flex;
+    flex-wrap: wrap;
+    /* 固定顶端高度 */
+    /* align-content: flex-start;
+    align-items: flex-start; */
+
+}
+#mainContent>*{
+    width: 100%;
+    max-height: 550px;
+}
+a{
+    color: #aaa;
+    text-decoration: none;
+}
+
+
+/* 把下拉列表恢复为100% */
+.el-input--suffix{
+   width: 100%;
+}
+/* 单选框的 */
+.el-form-item__content{
+    line-height: 0;
+}
