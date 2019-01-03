@@ -100,9 +100,35 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.$router.push("/");
+        //   this.$router.push("/");
+                // console.log(this)
+        // console.log(this.ruleForm2)
+        this.axios.post(
+        'http://127.0.0.1:9090/users/useradd',
+         this.qs.stringify(this.ruleForm2)
+        )
+        .then(result =>{
+            console.log("服务器成功返回的结果",result);
+             if(result.data.isOk){
+              //添加成功
+              this.$message({
+                message: result.data.msg,
+                type: 'success'
+              });
+              setTimeout(() => {
+                this.$router.push("/userlist");
+              }, 100);
+            }
+            else{
+              //添加失败
+              this.$message.error(result.data.msg);
+            }
+        })
+        .catch(err=>{
+            console.log("服务器错误返回的信息",err)
+        });
         } else {
-          console.log("登陆失败，请重新登陆!!");
+        //   console.log("登陆失败，请重新登陆!!");
           return false;
         }
       });

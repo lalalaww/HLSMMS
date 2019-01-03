@@ -54,5 +54,33 @@ export default new Router({
       // 异步加载：懒加载，在需要的时候才加载，目的是节省内存占用
       component: () => import(/* webpackChunkName: "ManageClass" */ './views/AccountAdd.vue')
     }
+    ,
+    {
+      path:'/goodsadd',
+      //商品添加
+      // 异步加载：懒加载，在需要的时候才加载，目的是节省内存占用
+      component: () => import(/* webpackChunkName: "ManageClass" */ './views/goodsAdd.vue')
+    }
+    ,
+    {
+      path:'/goodslist',
+      //商品显示
+      // 异步加载：懒加载，在需要的时候才加载，目的是节省内存占用
+      component: () => import(/* webpackChunkName: "ManageClass" */ './views/goodsList.vue')
+    }
+    ,
+    {
+      path:'/salesStatistics',
+      //商品显示
+      // 异步加载：懒加载，在需要的时候才加载，目的是节省内存占用
+      component: () => import(/* webpackChunkName: "ManageClass" */ './views/salesStatistics.vue')
+    }
+    ,
+    {
+      path:'/incoStatistics',
+      //商品显示
+      // 异步加载：懒加载，在需要的时候才加载，目的是节省内存占用
+      component: () => import(/* webpackChunkName: "ManageClass" */ './views/incoStatistics.vue')
+    }
   ]
 })

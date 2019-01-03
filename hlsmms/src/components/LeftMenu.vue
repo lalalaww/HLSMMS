@@ -11,7 +11,7 @@
                 <p>
                     <router-link to="/">管理首页</router-link>
                     |
-                    <a href="#">退出系统</a>
+                    <a href="#" @click="loginOut()">退出系统</a>
                 </p>
             </div>
         </div>
@@ -38,8 +38,12 @@
                             <span>商品管理</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="2-1">商品管理</el-menu-item>
-                            <el-menu-item index="2-2">添加商品</el-menu-item>
+                            <el-menu-item index="/goodslist">
+                                <router-link to='/goodslist'>商品管理</router-link>
+                            </el-menu-item>
+                            <el-menu-item index="/goodsadd">
+                                <router-link to='/goodsadd'>添加商品</router-link>
+                            </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
@@ -70,11 +74,13 @@
                             <span>统计管理</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="5-1">销售统计</el-menu-item>
-                            <el-menu-item index="5-2">进货统计</el-menu-item>
+                            <el-menu-item index="/salesStatistics">
+                                <router-link to='/salesStatistics'>销售统计</router-link>
+                            </el-menu-item>
+                            <el-menu-item index="/incoStatistics">
+                                <router-link to="/incoStatistics">进货统计</router-link></el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
-
                     <el-submenu index="6">
                         <template slot="title">
                             <span>账号管理</span>
@@ -98,7 +104,9 @@
                         </template>
                         <el-menu-item-group>
                             <el-menu-item index="7-1">账号管理</el-menu-item>
-                            <el-menu-item index="/accountadd"><router-link to="/accountadd">添加账号</router-link></el-menu-item>
+                            <el-menu-item index="/accountadd">
+                                <router-link to="/accountadd">添加账号</router-link>
+                            </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
@@ -128,6 +136,22 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    loginOut() {
+      this.axios
+        .get("http://127.0.0.1:9090/users/loginOut")
+        .then(result => {
+          if (result.data.isOk) {
+            this.$message({
+              message: "退出成功！欢迎下次登陆！",
+              type: "success"
+            });
+            this.$router.push("/login");
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
